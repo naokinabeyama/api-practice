@@ -1,0 +1,71 @@
+openapi: "3.0.0"
+
+info:
+  version: ”1.0.0”
+  title: ”Shop Review API"
+
+# servers:
+#   - url: "http://localhost:{port}"
+#     description: "Local development"
+#     variables:
+#       port:
+#         enum: ["3000", "8080"]
+#         default: "3000"
+#   - url: "https://it1.tastylog.com"
+#     description: "Integration Test"
+#   - url: "https://stg.tastylog.com"
+#     description: "Staging"
+#   - url: "https://api.tastylog.com"
+#     description: "Production"
+
+paths: {}
+
+components:
+  schemas:
+    SampleObject:
+      type: object
+      properties:
+        shop:
+          type: object
+          properties:
+            name: { type: string }
+            place: { type: string }
+        reviews:
+          type: array
+          items:
+            type: object
+            properties:
+              score:
+                type: integer
+                enum: [1, 2, 3, 4, 5]
+              comment:
+                type: string
+# components:
+#   schemas:
+#     SampleIint:
+#       type: integer
+#       minimum: 0
+#       exclusiveMinimum: false
+#       maximum: 100
+#       exclusiveMaximum: true
+#     SampleString:
+#       type: string
+#       nullable: true
+#       minLength: 10
+#       maxLength: 20
+#     SampleBoolean:
+#       type: boolean
+
+#   get:
+#     summary: "Get specified shop reviews"
+#     description: "(description) Get specified shop reviews"
+#     tags: ["shops"]
+#     deprecated: false
+#     parameters:
+#       - name: shopId
+#         in: path
+#         required:
+#         schema: { type: string }
+#     responses:
+#       "200":
+#         description: "Success operation"
